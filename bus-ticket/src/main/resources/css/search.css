@@ -1,0 +1,8 @@
+.searchform{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-around;
+    background-color: beige;
+    height: 45px;
+    padding-top: 20px;
+}

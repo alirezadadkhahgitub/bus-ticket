@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link href="#" th:href="@{../css/login.css}"  rel="stylesheet" type="text/css" >
+</head>
+<body>
+
+<div class="allpage">
+    <div class="loginform">
+        <form action="#" th:action="@{/customer-login}" th:object="${customer}" method="post">
+            <div class="fields">
+                <label for="username" class="submit">نام کاربری</label>
+
+                <input type="text"  th:field="*{username}"  name="username" id="username" />
+            </div>
+            <div class="fields">
+                <label for="password" class="submit">رمزعبور</label>
+                <input type="password" th:field="*{password}" name="password" id="password" />
+            </div>
+            <div class="submit">
+                <input type="submit" value="ورد">
+            </div>
+        </form>
+    </div>
+
+</div>
+</body>
+</html>

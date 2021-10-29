@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div th:switch="${ticket}">
+    <h2 th:case="null">No users found!</h2>
+    <div th:case="*">
+        <h2>Buses</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>شناسه سفر</th>
+                <th>نام</th>
+                <th>جنسیت</th>
+                <th>مبدا</th>
+                <th>مقصد</th>
+                <th>تاریخ حرکت</th>
+                <th>ساعت حرکت</th>
+                <th>شناسه سفر</th>
+            </tr>
+
+            </thead>
+            <tbody>
+                <td th:text="${ticket.id}"></td>
+                <td th:text="${ticket.firstnameAndLastname}"></td>
+                <td th:text="${ticket.gender}"></td>
+                <td th:text="${ticket.bus.origin}"></td>
+                <td th:text="${ticket.bus.destination}"></td>
+                <td th:text="${#dates.format(ticket.bus.ticketDate, 'dd-MM-yyyy')}"></td>
+                <td th:text="${#temporals.format(ticket.bus.ticketHour, 'HH:mm:ss')}"></td>
+                <td th:text="${ticket.bus.tripId}"></td>
+                <td>
+                    <form action="#" th:action="@{/deleteTicket}" th:object="${ticket1}" >
+                        <input type="hidden" name="id" id="id" th:value="${ticket.getId()}">
+                        <input type="submit" value="لغو بلیط">
+                    </form>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

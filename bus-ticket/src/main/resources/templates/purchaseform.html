@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="purchaseform.css">
+</head>
+
+<body>
+<div class="allpage">
+    <div class="form">
+        <form action="#" th:action="@{/buyTicket2}" th:object="${ticket}">
+            <div class="formparamter">
+                <p>لطفا این فرم را پرکنید </p>
+            </div>
+            <div class="formparamter">
+                <label for="name">نام ونام خانوادگی</label>
+                <input type="text" id="name" name="firstnameAndLastname" th:field="*{firstnameAndLastname}">
+            </div>
+            <div class="formparamter">
+                <label style="margin-left: 5px;">:جنسیت</label>
+                <label for="MALE">مرد</label>
+                <input type="radio" id="MALE" name="MALE" value="MALE" th:field="*{gender}">
+                <label for="FEMALE">زن</label>
+                <input type="radio" id="FEMALE" name="FEMALE" value="FEMALE" th:field="*{gender}">
+            </div>
+            <div class="formparamter">
+                <input type="submit" value="تاید">
+            </div>
+
+        </form>
+    </div>
+</div>
+
+</body>
+
+</html>

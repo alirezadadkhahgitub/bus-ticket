@@ -1,0 +1,25 @@
+.allpage{
+    display:flex;
+    justify-content: center;
+
+}
+.loginform{
+    display:flex;
+    height: 300px;
+    width: 33.3%;
+    justify-content: center;
+    margin-top: 100px;
+    background-color: rgb(91, 162, 224);
+}
+.fields{
+    display:block;
+
+}
+.submit{
+    display: flex;
+    justify-content: center;
+}
+*{
+
+
+}

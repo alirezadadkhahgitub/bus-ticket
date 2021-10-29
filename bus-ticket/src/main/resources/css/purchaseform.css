@@ -1,0 +1,17 @@
+.form{
+    display: flex;
+    background-color: aquamarine;
+    justify-content: center;
+    width: 30.3%;
+
+    min-height: 100vh;
+}
+.allpage{
+    display: flex;
+    justify-content: center;
+}
+.formparamter{
+    display: flex;
+    flex-direction: row-reverse;
+    padding-bottom: 80px;
+}

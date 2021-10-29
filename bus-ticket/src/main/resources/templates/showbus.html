@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+<div th:switch="${buses}">
+    <h2 th:case="null">No users found!</h2>
+    <div th:case="*" class="table">
+        <div>
+            <tr>
+                <th th:text="${buses[0].origin}"></th>
+                <th th:text="${buses[0].destination}"></th>
+                <th th:text="${#dates.format(buses[0].ticketDate, 'dd-MM-yyyy')}"></th>
+            </tr>
+
+        </div>
+
+        <div>
+            <tr>
+                <th>ساعت حرکت</th>
+                <th>شناسه سفر</th>
+            </tr>
+        </div>
+
+        <div>
+            <tr th:each="bus : ${buses}">
+                <td th:text="${#temporals.format(bus.ticketHour, 'HH:mm:ss')}"></td>
+                <td th:text="${bus.tripId}"></td>
+                <td>
+                    <form action="#" th:action="@{/buyTicket}" th:object="${bus1}" >
+                        <input type="hidden" name="id" id="id" th:value="${bus.getId()}">
+                        <input type="submit" value="خرید">
+                    </form>
+                </td>
+            </tr>
+        </div>
+
+    </div>
+</body>
+</html>
