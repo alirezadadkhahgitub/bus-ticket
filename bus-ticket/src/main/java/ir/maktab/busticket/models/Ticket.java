@@ -22,8 +22,10 @@ public class Ticket extends BaseEntity<Long> {
     private Bus bus;
     private String firstnameAndLastname;
     private Gender gender;
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long ticketId;
+    @ManyToOne
+    private Customer customer;
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
+//    private Long ticketId;
 
 
 }
